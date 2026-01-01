@@ -1,69 +1,71 @@
-🧠 Brain Tumor Detection using U-Net and Attention U-Net
+📌 Overview
 
-This repository contains the complete implementation of a Brain Tumor Detection system using deep learning. The project focuses on medical image segmentation and classification using U-Net and Attention U-Net architectures, along with extensive experimentation on training strategies, classifier heads, and hyperparameters.
+This project implements a Brain Tumor Detection system using deep learning techniques for medical image segmentation and classification.
 
-The implementation is provided as a single, well-documented Jupyter Notebook, designed to be easily reproducible and presentation-ready.
+The work is centered around U-Net and Attention U-Net architectures, with an additional classification head attached to the encoder. Multiple training strategies and design choices are explored and analyzed.
 
-📌 Project Objectives
+The entire implementation is provided in a single, well-documented Jupyter Notebook, making it easy to run, understand, and present.
 
-Perform brain tumor segmentation using U-Net.
+✨ Features
 
-Attach a classification head to the encoder for tumor classification.
+✅ Brain tumor segmentation using U-Net
 
-Compare joint vs separate training of segmentation and classification heads.
+✅ Attention U-Net for improved segmentation performance
 
-Upgrade the model to Attention U-Net and analyze performance improvements.
+✅ Encoder-based classification head
 
-Experiment with multiple classifier architectures and training hyperparameters.
+✅ Joint vs separate training analysis
 
-Provide a unified inference pipeline for visualization and prediction.
+✅ Multiple classifier architecture comparisons
+
+✅ Hyperparameter tuning experiments
+
+✅ End-to-end inference & visualization pipeline
+
+✅ Clean, presentation-ready notebook
 
 📂 Dataset
 
-The dataset used in this project is BRISC 2025 Brain Tumor Dataset, available on Kaggle.
+BRISC 2025 – Brain Tumor Dataset
 
-🔗 Download link:
+🔗 Download from Kaggle:
 https://www.kaggle.com/datasets/briscdataset/brisc2025
 
-Dataset Setup Instructions
+📁 Dataset Setup
 
 Download the dataset from Kaggle.
 
-Extract the dataset files.
+Extract all files.
 
-Place all dataset files and folders inside the same directory as the .ipynb notebook.
+Place all dataset folders/files in the same directory as the .ipynb notebook.
 
-No additional path configuration is required.
+⚠️ Important:
+No path changes are required. The notebook assumes the dataset is located in the same folder.
 
-Once placed correctly, the notebook will automatically load the data.
-
-🚀 How to Run the Project
-
-Clone this repository:
-
+🚀 How to Run
+1️⃣ Clone the Repository
 git clone https://github.com/your-username/Brain-Tumor-Detection.git
 cd Brain-Tumor-Detection
 
-
-Install the required dependencies:
-
-pip install -r requirements.txt
+2️⃣ Install Dependencies
+pip install numpy matplotlib opencv-python scikit-learn torch torchvision jupyter
 
 
-(If requirements.txt is not provided, required libraries are listed below.)
+(Optional: create a virtual environment for best practice.)
 
-Open the Jupyter Notebook:
-
+3️⃣ Run the Notebook
 jupyter notebook
 
 
-Open the .ipynb file.
+Open the .ipynb file
 
-Run all cells sequentially — no manual intervention required.
+Run all cells sequentially
+
+No manual configuration needed
 
 ✅ The notebook will:
 
-Load and preprocess the data
+Load and preprocess data
 
 Train segmentation and classification models
 
@@ -72,61 +74,62 @@ Evaluate performance
 Visualize predictions
 
 🏗️ Model Architectures
-1. U-Net (Baseline)
+🔹 U-Net (Baseline)
 
-Used for pixel-wise tumor segmentation.
+Encoder-decoder architecture with skip connections
 
-Encoder-decoder structure with skip connections.
+Used for pixel-level tumor segmentation
 
-2. Attention U-Net
+🔹 Attention U-Net
 
-Enhances U-Net by integrating attention gates.
+Adds attention gates to skip connections
 
-Improves focus on tumor-relevant regions.
+Helps the model focus on tumor-relevant regions
 
-Trained and evaluated separately for comparison.
+Trained and compared against baseline U-Net
 
-3. Classification Head
+🔹 Classification Head
 
-Attached to the encoder output.
+Attached to the encoder output
 
-Multiple classifier architectures tested:
+Encoder features are pooled and passed to a classifier
 
-Fully Connected Networks
-
-Deeper MLP-based heads
-
-CNN-based classifier variants
+Multiple classifier designs tested
 
 🔬 Experiments & Analysis
-
 ✔ Joint vs Separate Training
 
 Segmentation and classification heads trained:
 
 Jointly (multi-task learning)
 
-Separately (feature extraction + classifier)
+Separately (encoder feature extraction)
+
+Performance comparison and analysis included
 
 ✔ Classifier Architecture Comparison
 
-Performance comparison across different classifier designs.
+Fully Connected heads
+
+Deeper MLP classifiers
+
+CNN-based classifier variants
 
 ✔ Hyperparameter Tuning
 
 Optimizers tested: Adam, SGD, RMSprop
 
-Wide learning rate exploration
+Wide learning-rate search
 
-Batch size and regularization analysis
+Batch size and regularization experiments
 
-📊 All results are compiled and discussed inside the notebook.
+📊 All results are compiled and discussed in the notebook.
 
 🖼️ Inference & Visualization
 
 The notebook includes a complete inference pipeline that:
 
-Takes any input MRI image
+Takes any MRI image as input
 
 Displays:
 
@@ -136,17 +139,17 @@ Predicted segmentation mask
 
 Predicted tumor class
 
-This makes the notebook suitable for live demonstrations and evaluations.
+This makes the project ideal for demonstrations and evaluations.
 
-❌ Not Implemented
+❌ Not Included
 
-EfficientDet-based decoder integration (High-difficulty bonus task) is intentionally not included.
+🚫 EfficientDet-based decoder integration (High-difficulty bonus task)
 
-🛠️ Technologies Used
+🛠️ Tech Stack
 
 Python
 
-PyTorch / TensorFlow (depending on implementation)
+PyTorch
 
 NumPy
 
@@ -160,18 +163,22 @@ Jupyter Notebook
 
 📑 Notes
 
-A single preprocessing pipeline is applied to all images.
+A single unified preprocessing pipeline is used for all images.
 
-The notebook is structured and commented for easy understanding.
+Notebook is well-commented and structured for easy understanding.
 
-No separate presentation slides are required due to the clarity of the notebook.
+No separate presentation slides are required.
 
-📬 Acknowledgments
+🙌 Acknowledgments
 
-Dataset provided by BRISC 2025 via Kaggle.
+Dataset: BRISC 2025 (Kaggle)
 
-U-Net and Attention U-Net inspired by original research papers.
+Model inspiration:
 
-⭐ If You Find This Useful
+U-Net: Ronneberger et al.
 
-Feel free to ⭐ star the repository and share feedback!
+Attention U-Net: Oktay et al.
+
+⭐ Support
+
+If you find this project helpful, consider giving it a ⭐ star on GitHub!
